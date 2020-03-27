@@ -1,0 +1,100 @@
+{
+  "products": [
+    {
+      "id": 0,
+      "img_src": "/images/painting10.png",
+      "title": "Kellar",
+      "price": 150.0,
+      "collection": ["showroom", "study", "den"],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mattis pellentesque id nibh tortor id aliquet lectus. Tellus in metus vulputate eu scelerisque felis imperdiet proin. Commodo sed egestas egestas fringilla phasellus faucibus."
+    },
+    {
+      "id": 1,
+      "img_src": "/images/painting6.png",
+      "title": "NYC TWA",
+      "collection": ["bedroom", "study", "den"],
+      "price": 60.0,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mattis pellentesque id nibh tortor id aliquet lectus. Tellus in metus vulputate eu scelerisque felis imperdiet proin. Commodo sed egestas egestas fringilla phasellus faucibus."
+    },
+    {
+      "id": 2,
+      "img_src": "/images/painting12.png",
+      "title": "Gold Zerschlagt",
+      "collection": ["bedroom", "den", "showroom"],
+      "price": 150.0,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mattis pellentesque id nibh tortor id aliquet lectus. Tellus in metus vulputate eu scelerisque felis imperdiet proin. Commodo sed egestas egestas fringilla phasellus faucibus."
+    },
+    {
+      "id": 3,
+      "img_src": "/images/painting11.png",
+      "title": "Clean Teeth",
+      "collection": ["bathroom"],
+      "price": 150.0,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mattis pellentesque id nibh tortor id aliquet lectus. Tellus in metus vulputate eu scelerisque felis imperdiet proin. Commodo sed egestas egestas fringilla phasellus faucibus."
+    },
+    {
+      "id": 4,
+      "img_src": "/images/painting1.png",
+      "title": "True Renasssance",
+      "collection": ["study", "den", "showroom"],
+      "price": 160.0,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mattis pellentesque id nibh tortor id aliquet lectus. Tellus in metus vulputate eu scelerisque felis imperdiet proin. Commodo sed egestas egestas fringilla phasellus faucibus."
+    },
+    {
+      "id": 5,
+      "img_src": "/images/painting2.png",
+      "title": "Mr Albini",
+      "price": 220.0,
+      "collection": ["study", "den", "showroom"],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mattis pellentesque id nibh tortor id aliquet lectus. Tellus in metus vulputate eu scelerisque felis imperdiet proin. Commodo sed egestas egestas fringilla phasellus faucibus."
+    },
+    {
+      "id": 6,
+      "img_src": "/images/painting3.png",
+      "title": "Macbeth",
+      "price": 90.0,
+      "collection": ["study", "den", "bedroom"],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mattis pellentesque id nibh tortor id aliquet lectus. Tellus in metus vulputate eu scelerisque felis imperdiet proin. Commodo sed egestas egestas fringilla phasellus faucibus."
+    },
+    {
+      "id": 7,
+      "img_src": "/images/painting4.png",
+      "title": "War Pledges",
+      "collection": ["study", "den", "showroom", "utility"],
+      "price": 150.0,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mattis pellentesque id nibh tortor id aliquet lectus. Tellus in metus vulputate eu scelerisque felis imperdiet proin. Commodo sed egestas egestas fringilla phasellus faucibus."
+    },
+    {
+      "id": 8,
+      "img_src": "/images/painting5.png",
+      "title": "Chocolat Klaus",
+      "price": 200.0,
+      "collection": ["kitchen"],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mattis pellentesque id nibh tortor id aliquet lectus. Tellus in metus vulputate eu scelerisque felis imperdiet proin. Commodo sed egestas egestas fringilla phasellus faucibus."
+    },
+    {
+      "id": 9,
+      "img_src": "/images/painting7.png",
+      "title": "Yellow Stone",
+      "price": 80.0,
+      "collection": ["study", "bedroom", "study"],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mattis pellentesque id nibh tortor id aliquet lectus. Tellus in metus vulputate eu scelerisque felis imperdiet proin. Commodo sed egestas egestas fringilla phasellus faucibus."
+    },
+    {
+      "id": 10,
+      "img_src": "/images/painting8.png",
+      "title": "Chicago Braniff",
+      "price": 150.0,
+      "collection": ["study", "den", "showroom"],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mattis pellentesque id nibh tortor id aliquet lectus. Tellus in metus vulputate eu scelerisque felis imperdiet proin. Commodo sed egestas egestas fringilla phasellus faucibus."
+    },
+    {
+      "id": 11,
+      "img_src": "/images/painting9.png",
+      "title": "NSA",
+      "price": 150.0,
+      "collection": ["study", "den", "showroom"],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mattis pellentesque id nibh tortor id aliquet lectus. Tellus in metus vulputate eu scelerisque felis imperdiet proin. Commodo sed egestas egestas fringilla phasellus faucibus."
+    }
+  ]
+}
