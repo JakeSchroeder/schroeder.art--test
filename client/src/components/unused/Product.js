@@ -105,11 +105,12 @@ const StyledButton = styled.button`
 const MoreInfo = () => <InfoText>More Info</InfoText>;
 
 const Product = ({ id, img, title, price, addToCart, noButton }) => {
+  const dispatch = useDispatch();
   return (
     <ProductWrapper>
       <ProductImageWrapper>
         <ProductImage src={img} alt={`image of ${title}`} />
-
+        asdfasdfasdf
         <ProductOverlay>
           <ActionWrapper>
             <MoreInfo />
@@ -123,11 +124,7 @@ const Product = ({ id, img, title, price, addToCart, noButton }) => {
           <ProductPrice>{useCurrencyFormat(price)}</ProductPrice>
         </ProductInfo>
         {noButton ? null : (
-          <StyledButton
-            onClick={() => {
-              addToCart(id);
-            }}
-          >
+          <StyledButton onClick={() => dispatch(addToCart(id))}>
             Add To Cart
           </StyledButton>
         )}
@@ -140,6 +137,4 @@ Product.propTypes = {
   addToCart: PropTypes.func.isRequired
 };
 
-const mapStateToProps = state => ({});
-
-export default connect(mapStateToProps, { addToCart })(Product);
+export default Product;

@@ -1,74 +1,44 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
-import { connect } from "react-redux";
-
-import { fetchProducts } from "../../../services/shelf/actions";
+import { connect, useDispatch, useSelector } from "react-redux";
 
 import Spinner from "../../Spinner";
 import ShelfHeader from "./ShelfHeader";
 import ProductList from "./ProductList";
+import {
+  fetchProducts,
+  selectProductsLoading,
+  selectAllProductsItems
+} from "../../../features/products/productsSlice";
 
 const Shelf = props => {
-  const [isLoading, setIsLoading] = useState(false);
+  const dispatch = useDispatch();
+
+  const loading = useSelector(selectProductsLoading);
+  const products = useSelector(selectAllProductsItems);
+  const filters = useSelector(state => state.filters.items);
+  const sort = useSelector(state => state.sort.type);
 
   useEffect(() => {
-    handleFetchProducts();
-  }, []);
+    handleFetchProducts(filters, undefined);
+  }, [filters, sort]);
 
-  useEffect(() => {
-    // const { filters: nextFilters, sort: nextSort } = nextProps;
-
-    handleFetchProducts(props.filters, undefined);
-
-    // if (nextSort !== this.props.sort) {
-    //   this.handleFetchProducts(undefined, nextSort);
-    // }
-  }, [props.filters]);
-
-  useEffect(() => {
-    handleFetchProducts(undefined, props.sort);
-  }, [props.sort]);
-
-  const handleFetchProducts = (filters = props.filters, sort = props.sort) => {
-    setIsLoading(true);
-    console.log("Fetching");
-    props.fetchProducts(filters, sort, () => {
-      setIsLoading(false);
-      console.log("Complete");
-    });
+  const handleFetchProducts = async searchOptions => {
+    dispatch(fetchProducts(searchOptions));
   };
-
-  // const { products } = this.props;
-  // const { isLoading } = this.state;
 
   return (
     <>
-      <ShelfHeader
-        filters={props.filters}
-        productsLength={props.products.length}
-      />
+      <ShelfHeader filters={filters} productsLength={products.length} />
 
       <ProductList
-        products={props.products}
-        isLoading={isLoading}
+        products={products}
+        isLoading={loading}
         spinner={<Spinner />}
       />
     </>
   );
 };
 
-Shelf.propTypes = {
-  fetchProducts: PropTypes.func.isRequired,
-  products: PropTypes.array.isRequired,
-  filters: PropTypes.array,
-  sort: PropTypes.string
-};
-
-const mapStateToProps = state => ({
-  products: state.shelf.products,
-  filters: state.filters.items,
-  sort: state.sort.type
-});
-
-export default connect(mapStateToProps, { fetchProducts })(Shelf);
+export default Shelf;

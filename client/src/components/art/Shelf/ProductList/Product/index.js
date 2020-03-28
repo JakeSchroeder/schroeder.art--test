@@ -1,13 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { withRouter } from "react-router-dom";
-import { connect } from "react-redux";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
 // import test_src from "../img/painting1.png";
 import useCurrencyFormat from "../../../../../hooks/useCurrencyFormat";
 import Colors from "../../../../utils/Colors";
+import { addToCart } from "../../../../../features/cart/cartSlice";
 
-import { addProduct } from "../../../../../services/cart/actions";
 const ProductWrapper = styled.div`
   /* border: 1px solid #b72a2a; */
   display: flex;
@@ -103,9 +102,8 @@ const StyledButton = styled.button`
 
 const MoreInfo = () => <InfoText>More Info</InfoText>;
 
-const Product = ({ product, addProduct }) => {
-  product.quantity = 1;
-
+const Product = ({ product }) => {
+  const dispatch = useDispatch();
   let formattedPrice = useCurrencyFormat(product.price);
 
   return (
@@ -126,11 +124,7 @@ const Product = ({ product, addProduct }) => {
           <ProductPrice>{formattedPrice}</ProductPrice>
         </ProductInfo>
 
-        <StyledButton
-          onClick={() => {
-            addProduct(product);
-          }}
-        >
+        <StyledButton onClick={() => dispatch(addToCart(product))}>
           Add To Cart
         </StyledButton>
       </ProductFooter>
@@ -139,8 +133,7 @@ const Product = ({ product, addProduct }) => {
 };
 
 Product.propTypes = {
-  product: PropTypes.object.isRequired,
-  addProduct: PropTypes.func.isRequired
+  product: PropTypes.object.isRequired
 };
 
-export default connect(null, { addProduct })(Product);
+export default Product;

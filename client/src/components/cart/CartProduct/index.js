@@ -75,24 +75,14 @@ const DecrementQuantity = styled.button`
   height: 35px;
 `;
 
-const CartProduct = ({ changeProductQuantity, product, removeProduct }) => {
+const CartProduct = ({ onIncrease, onDecrease, product, removeProduct }) => {
   const formattedPrice = useCurrencyFormat(product.price);
-
-  const handleOnIncrease = () => {
-    product.quantity = product.quantity + 1;
-    changeProductQuantity(product);
-  };
-
-  const handleOnDecrease = () => {
-    product.quantity = product.quantity - 1;
-    changeProductQuantity(product);
-  };
 
   return (
     <ProductWrapper>
       <ProductDelete
         onClick={() => {
-          removeProduct(product);
+          removeProduct(product.id);
         }}
       >
         x
@@ -109,21 +99,9 @@ const CartProduct = ({ changeProductQuantity, product, removeProduct }) => {
           <ProductPrice>{formattedPrice}</ProductPrice>
         </ProductInfo>
         <ProductQuantityWrapper>
-          <DecrementQuantity
-            onClick={() => {
-              handleOnDecrease();
-            }}
-          >
-            -
-          </DecrementQuantity>
+          <DecrementQuantity onClick={() => onDecrease()}>-</DecrementQuantity>
           <ProductQuantity>{product.quantity}</ProductQuantity>
-          <IncrementQuantity
-            onClick={() => {
-              handleOnIncrease();
-            }}
-          >
-            +
-          </IncrementQuantity>
+          <IncrementQuantity onClick={() => onIncrease()}>+</IncrementQuantity>
         </ProductQuantityWrapper>
       </ProductFooter>
     </ProductWrapper>
@@ -133,7 +111,8 @@ const CartProduct = ({ changeProductQuantity, product, removeProduct }) => {
 CartProduct.propTypes = {
   product: PropTypes.object.isRequired,
   removeProduct: PropTypes.func.isRequired,
-  changeProductQuantity: PropTypes.func.isRequired
+  onIncrease: PropTypes.func.isRequired,
+  onDecrease: PropTypes.func.isRequired
 };
 
 export default CartProduct;

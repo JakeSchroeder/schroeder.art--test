@@ -10,10 +10,9 @@ const ProductListWrapper = styled.div`
 
 const ProductList = ({ products, isLoading, spinner }) => (
   <ProductListWrapper>
-    {isLoading && spinner}
-    {products.map(p => (
-      <Product product={p} key={p.id} />
-    ))}
+    {isLoading
+      ? spinner
+      : products.map(p => <Product product={p} key={p.id} />)}
   </ProductListWrapper>
 );
 
