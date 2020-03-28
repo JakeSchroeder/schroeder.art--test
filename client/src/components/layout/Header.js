@@ -1,12 +1,17 @@
 import React from "react";
 import styled from "styled-components";
-import { connect } from "react-redux";
-import { NavLink, withRouter } from "react-router-dom";
+import { connect, useSelector, useDispatch } from "react-redux";
+import { NavLink, withRouter, useHistory } from "react-router-dom";
 import { logoutUser } from "../../services/auth/actions";
 
 import logo_src from "../../img/logo.png";
 
 import Colors from "../utils/Colors";
+import {
+  selectShoppingCartCount,
+  selectCartTotalWithQuantity,
+  bananaselector
+} from "../../features/cart/cartSlice";
 
 const HeaderWrapper = styled.header`
   background: ${Colors.Primary};
@@ -115,10 +120,15 @@ const ItemIndicator = styled.div`
 `;
 
 const Header = props => {
+  const dispatch = useDispatch();
+  const itemsInCart = useSelector(selectCartTotalWithQuantity);
+  const history = useHistory();
+
   const onLogout = e => {
     e.preventDefault();
-    props.logoutUser(props.history);
-    window.location.href = "/";
+    dispatch(logoutUser(props.history));
+    // Note: your private route business should handle this
+    history.push("/");
   };
 
   return (
@@ -177,7 +187,7 @@ const Header = props => {
                   <ListLink exact to="/cart" activeClassName="is-active">
                     Cart
                   </ListLink>
-                  <ItemIndicator>{props.productQuantity}</ItemIndicator>
+                  <ItemIndicator>{itemsInCart}</ItemIndicator>
                 </CartWrapper>
               </ListItem>
             </List>
@@ -188,9 +198,4 @@ const Header = props => {
   );
 };
 
-const mapStateToProps = state => ({
-  // auth: state.auth,
-  productQuantity: state.total.data.productQuantity
-});
-
-export default connect(mapStateToProps, { logoutUser })(withRouter(Header));
+export default Header;

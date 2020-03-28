@@ -10,7 +10,6 @@ import Colors from "../utils/Colors";
 
 import Shelf from "./Shelf";
 import Cart from "../cart";
-import { fetchProducts } from "../../services/shelf/actions";
 
 import arrow_src from "../../img/down-arrow.svg";
 
